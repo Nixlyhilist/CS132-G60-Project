@@ -2443,3 +2443,11 @@ input, select, textarea {
 					}
 
 	}
+
+/* Stack */
+
+	.stack {
+		display: flex;
+		flex-direction: column;
+		align-items: space-evenly;
+	}

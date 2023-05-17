@@ -87,7 +87,7 @@
 					</div>
 					<footer>
 						<p>Lorem ipsum dolor sit sapien vestibulum ipsum primis?</p>
-						<a href="#portfolio" class="button large scrolly">Let's take a look at our data</a>
+						<a href="https://github.com/Nixlyhilist/CS132-G60-Project/blob/main/dataset.xlsx" class="button large scrolly">Let's take a look at our data</a>
 					</footer>
 				</div>
 			</article>
@@ -97,54 +97,88 @@
 				<div class="container">
 					<header>
 						<h2>We mined the internet for fake news data.</h2>
-						<p>Proin odio consequat  sapien vestibulum consequat lorem dolore feugiat.</p>
+						<p>Here's what we've gathered and observed.</p>
 					</header>
-					<div class="row">
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
-								<h3><a href="#">Topic</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
-							</article>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
-								<h3><a href="#">Keywords</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
-							</article>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
-								<h3><a href="#">Tools</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
-							</article>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
-								<h3><a href="#">Tempus dolore</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
-							</article>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic05.jpg" alt="" /></a>
-								<h3><a href="#">Feugiat aliquam</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
-							</article>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic06.jpg" alt="" /></a>
-								<h3><a href="#">Sed amet ornare</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
-							</article>
+					<div class="row" style="justify-content: center;">
+						<div class="stack">
+							<p>This dataset contains 102 tweets taken from 2016-2022. Let's call this dataset "df"</p>
+							<p style="text-align: left;">The columns are as follows:</p>
+							<ul>
+								<li style="text-align: left;">Keywords - what was searched on Twitter to find the tweet</li>
+								<li style="text-align: left;">Account handle</li>
+								<li style="text-align: left;">Account name</li>
+								<li style="text-align: left;">Account bio</li>
+								<li style="text-align: left;">Account handle</li>
+								<li style="text-align: left;">Account type - whether the Twitter user is Anonymous or Identified</li>
+								<li style="text-align: left;">Joined - when their account was created</li>
+								<li style="text-align: left;">Following</li>
+								<li style="text-align: left;">Followers</li>
+								<li style="text-align: left;">Location</li>
+								<li style="text-align: left;">Tweet</li>
+								<li style="text-align: left;">Date posted</li>
+								<li style="text-align: left;">Likes</li>
+								<li style="text-align: left;">Replies</li>
+								<li style="text-align: left;">Retweets</li>
+							</ul>
+							<h4>Data pre-processing</h4>
+							<p>During exploration, it was discovered that only "Account bio" and "Location" contained null values.</p>
+							<p>Since these columns didn't hold a particularly significant value in exploring the data, <br>
+							the null values were simply replaced with signifiers that explicitly said their state.</p>
+							<img src="images/null.JPG" alt="" />
+							<br><br><br><br>
+							<p>The "Joined" and "Date posted" columns contained datetime data types that were varying in formats.<br>
+							For the purposes of this exploration, their values were changed into string data type following a mm/yy format.</p>
+							<br>
+							<p>Another column was introduced, taking the sum of "Likes", "Replies", and "Retweets", to form the column "Interactions"</p>
+							<img src="images/interactions.JPG" alt="" />
+							<br><br><br><br>
+							<h4>A new dataset</h4>
+							<p>For ease of exploration tweet frequency, a new dataset, which we'll call "date_df" was created with the following columns:</p>
+							<ul>
+								<li style="text-align: left;">Month - this is just a list of the months from 2016 - 2022 in mm/yy format</li>
+								<li style="text-align: left;">Count - this counts the number of tweets that were found for every month listed</li>
+								<li style="text-align: left;">Interactions - this counts the number of interactions that tweets received each month for every month listed</li>
+							</ul>
+							<img src="images/date_df.JPG" alt="" />
+							<br><br><br><br>
+							<h4>Visualization!</h4>
+							<br><br>
+							<p>The image below shows the correlation of each numerical-valued variable of the df dataset.<br>
+							A couple of interesting noticeable things can be seen. Firstly being "Following" and "Replies" being the only negatively correlated variables. <br>
+							Another noticeable thing is how strongly positively correlated "Likes", and "Retweets" are, <br>
+							which in effect makes the correlation of these two variables with "Interactions" also strongly positive.</p>
+							<embed type="text/html" src="embeds/dfcorr.html" width="800px" height="600px">
+							<br><br>
+							<p>Here's a little something that I thought was also interesting. There's only a moderately positive correlation between "Followers" and "Interactions".<br>
+							It would be an interesting thing to explore the effect of bot and/or troll accounts in this finding. </p>
+							<embed type="text/html" src="embeds/dfcorr_followers_interactions.html" width="800px" height="600px">
+							<br><br>
+							<p>The next few images give a more detailed look on the some of the variables of df.</p>
+							<embed type="text/html" src="embeds/hist_acctype.html" width="800px" height="600px">
+							<embed type="text/html" src="embeds/violin_followers.html" width="800px" height="600px">
+							<embed type="text/html" src="embeds/violin_following.html" width="800px" height="600px">
+							<embed type="text/html" src="embeds/violin_likes.html" width="800px" height="600px">
+							<embed type="text/html" src="embeds/violin_replies.html" width="800px" height="600px">
+							<embed type="text/html" src="embeds/violin_retweets.html" width="800px" height="600px">
+							<br><br>
+							<p>And here's a bar graph indicating the total interactions of each tweet (in order of their position in the dataset).</p>
+							<embed type="text/html" src="embeds/bar_interactions.html" width="800px" height="600px">
+							<br><br>
+							<p>Let's go ahead and take a look at the date_df now.</p>
+							<p>It turns out, tweeting more disinformation about mental health doesn't particularly translate to higher interaction numbers.<br>
+							Let's take a deeper look into this.</p>
+							<embed type="text/html" src="embeds/datedfcorr.html" width="800px" height="600px">
+							<br><br>
+							<p>Wow, isn't it interesting that the three months with the highest number of mental health disinformation tweets <br>
+							came just slightly after the three national elections that happened between 2016 and 2022?</p>
+							<embed type="text/html" src="embeds/tweetfrequency.html" width="800px" height="600px">
+							<br><br>
+							<p>However, as we've seen in the previous heat map, and better viewed on this scatter plot, having a lot of tweets didn't garner a lot of interactions. <br>
+							It turns out, the month with the highest number of interactions was a month wherein only one tweet was collected!</p>
+							<embed type="text/html" src="embeds/scatterinteraction.html" width="800px" height="600px">
 						</div>
 					</div>
 					<footer>
-						<p>Lorem ipsum dolor sit sapien vestibulum ipsum primis?</p>
 					</footer>
 				</div>
 			</article>
