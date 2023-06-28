@@ -21,7 +21,7 @@
 					<li><a href="#data">Data</a></li>
 					<li><a href="#methods">Methods</a></li>
 					<li><a href="#results">Results</a></li>
-					<li><a href="#team">Team</a></li>
+					<li><a href="#team">Contact</a></li>
 				</ul>
 			</nav>
 
@@ -36,7 +36,8 @@
 							<header>
 								<h1>Hi. We are <strong>Group 60</strong>.</h1>
 							</header>
-							<p>And this is our project, <strong>Project Title</strong>, <em>a short explanation of the project objectives</em>. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+							<p>And this is our project, <strong>Insurgence of Mental Health Misinformation during Election Periods</strong>, 
+							<em>This project aims to see the impact of the elections on the prevalence of mental health related tweets that spread misinformation.</em>. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 							<p>Data Science Team</p>
 							<ul style="list-style-type:none; margin-top:-30px;">
 							  <li>Josh Askin, WFU</li>
@@ -86,8 +87,6 @@
 						</div>
 					</div>
 					<footer>
-						<p>Lorem ipsum dolor sit sapien vestibulum ipsum primis?</p>
-						<a href="https://github.com/Nixlyhilist/CS132-G60-Project/blob/main/dataset.xlsx" class="button large scrolly">Let's take a look at our data</a>
 					</footer>
 				</div>
 			</article>
@@ -179,6 +178,7 @@
 						</div>
 					</div>
 					<footer>
+						<a href="https://github.com/Nixlyhilist/CS132-G60-Project/blob/main/dataset.xlsx" target="_blank" class="button large scrolly">Let's take a look at our data</a>
 					</footer>
 				</div>
 			</article>
@@ -188,9 +188,20 @@
 				<div class="container">
 					<header>
 						<h2>Let's talk about our data science methodology.</h2>
-						<p>Proin odio consequat  sapien vestibulum consequat lorem dolore feugiat.</p>
+						<p>To test our hypothesis, we had to look at the data of the frequency of monthly tweets<br>from January 2016 to December 2022. <br><br></p>
+						<br><br>
+						<img style="scale: 1.2;" src="images/mean.png" alt="" />
+						<br><br>
+						<p>For a visual, the image above shows the mean tweets per month during the election periods, compared againsts the rest of the months.
+							As an example, the 2016 election period, spanning from March 2016 to July 2016, is compared to the rest of the months from 2016 to 2022.
+							This goes the same for the 2019 election period, and the 2022 election period. The "combined" section shows the mean tweets per month for all three
+							election periods combined, compared the mean tweets per month of the rest of the months.
+						</p>
+						<br><br>
+						<p>Our team landed on the Wilcoxon rank-sum test as our choice for the statistical analysis method.</p><br>
+						<p>The Wilcoxon rank-sum test fits aptly because the data that we wanted to look at is not normalized,<br>as seen from the line graph in the previous section. </p>
 					</header>
-					<div class="row">
+					<!-- <div class="row">
 						<div class="col-6 col-6-medium col-12-small">
 							<article class="box style2">
 								<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
@@ -205,9 +216,9 @@
 								<p>Ornare nulla proin odio consequat.</p>
 							</article>
 						</div>
-					</div>
+					</div> -->
 					<footer>
-						<p>Lorem ipsum dolor sit sapien vestibulum ipsum primis?</p>
+						<!-- <p>Lorem ipsum dolor sit sapien vestibulum ipsum primis?</p> -->
 					</footer>
 				</div>
 			</article>
@@ -217,9 +228,25 @@
 				<div class="container">
 					<header>
 						<h2>Here's what we found out.</h2>
-						<p>Proin odio consequat  sapien vestibulum consequat lorem dolore feugiat.</p>
+						<!-- <p>Proin odio consequat  sapien vestibulum consequat lorem dolore feugiat.</p> -->
 					</header>
-					<div class="row">
+					<img style="scale: 1.2;" src="images/output.png" alt="" /><br><br>
+					<p>
+						After applying the Wilcoxon rank-sum test on the four comparisons that we wanted to check, it turns out that
+						all of them had a p-value greater than 0.05, as visualized by the image above.
+					</p>
+					<p>
+						So in conclusion, we can say that our null-hypothesis has not been successfully rejected. In terms of what we want to know 
+						for this project, unfortunately, that means we cannot confidently say that the election periods cause an insurgence of 
+						mental health misinformation tweets.
+					</p>
+
+					<br><br><br>
+					<p>Here's a poster summarizing our journey through this project!</p>
+					<img style="width: 1000px;" src="images/Design Idea.png" alt="" /><br><br>
+
+
+					<!-- <div class="row">
 						<div class="col-6 col-6-medium col-12-small">
 							<article class="box style2">
 								<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
@@ -234,16 +261,19 @@
 								<p>Ornare nulla proin odio consequat.</p>
 							</article>
 						</div>
-					</div>
+					</div> -->
+
+
+
 					<footer>
 						<p>Want to learn more? Take a look at our source codes.</p>
-						<a href="#contact" class="button large scrolly">Github Repo</a>
+						<a href="https://github.com/Nixlyhilist/CS132-G60-Project" target="_blank" class="button large scrolly">Github Repo</a>
 					</footer>
 				</div>
 			</article>
 
 		<!-- Team -->
-			<article id="team" class="wrapper style4">
+			<article id="contact" class="wrapper style4">
 				<div class="container medium">
 					<header>
 						<h2>We'd like to hear from you.</h2>
