@@ -14,7 +14,7 @@ code, del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var, b,
 u, i, center, dl, dt, dd, ol, ul, li, fieldset,
 form, label, legend, table, caption, tbody,
-tfoot, thead, tr, th, td, article, aside,
+tfoot, thead, tr, th, td, aside,
 canvas, details, embed, figure, figcaption,
 footer, header, hgroup, menu, nav, output, ruby,
 section, summary, time, mark, audio, video {
@@ -25,7 +25,7 @@ section, summary, time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;}
 
-article, aside, details, figcaption, figure,
+aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;}
 
@@ -220,6 +220,35 @@ input, select, textarea {
 		footer > p {
 			font-size: 1.25em;
 		}
+	
+	.pfname {
+		margin: 0 100px 0;
+	}
+
+	.p1 {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: flex-start;
+		float: left;
+		margin-left: 100px;
+	}
+
+	.p2 {
+		display: flex;
+		flex-flow: row-reverse nowrap;
+		justify-content: flex-end;
+		float: right;
+		margin-right: 100px;
+	}
+
+	.caption {
+		font-family: 'Roboto Condensed', sans-serif;
+		font-size: 25px;
+	}
+
+	.pf {
+		height: 200px;
+	}
 
 /* Container */
 
@@ -2032,6 +2061,10 @@ input, select, textarea {
 				.wrapper.style4 form textarea:focus {
 					background: #252525;
 				}
+		
+				.wrapper.style5 {
+					background-color: #EBECF0;
+				}
 
 /* Nav */
 
@@ -2132,7 +2165,26 @@ input, select, textarea {
 			#top p a {
 				color: inherit;
 			}
+	
+	#intro {
+		padding: 10em 0 1em 0;
+		display: block;
+		border-top: 10px solid black;
+		border-bottom: 3px solid black;
+	}
 
+		#intro h1 {
+			margin-top: -80px;
+		}
+
+		#intro p {
+			padding-bottom: -80px;
+		}
+	
+	#overview {
+		border-top: 10px solid black;
+	}
+	
 	#contact footer {
 		font-size: 0.9em;
 	}
@@ -2190,7 +2242,7 @@ input, select, textarea {
 			}
 
 			header {
-				margin: 0 0 4em 0;
+				margin: 0 0 0 0;
 			}
 
 		/* Wrappers */
@@ -2216,7 +2268,6 @@ input, select, textarea {
 					height: 24em;
 					margin: 0;
 				}
-
 	}
 
 /* Medium */
